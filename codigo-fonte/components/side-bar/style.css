@@ -1,0 +1,111 @@
+:root {
+  --primary-color: #1976d2;
+  --primary-dark: #1565c0;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --hover-color: rgba(255, 255, 255, 0.1);
+  --transition-speed: 0.3s;
+}
+
+.sidebar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  color: var(--text-light);
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease;
+  transform: translateX(0);
+}
+
+.sidebar:not(.open) {
+  transform: translateX(-100%);
+}
+
+.sidebar nav {
+  padding: 2rem 0;
+  height: 100%;
+}
+
+.sidebar nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  transition: all var(--transition-speed) ease;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar nav ul li a i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.sidebar nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: var(--text-light);
+  transform: scaleY(0);
+  transition: transform var(--transition-speed) ease;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: var(--hover-color);
+  padding-left: 2.5rem;
+}
+
+.sidebar nav ul li a:hover::before {
+  transform: scaleY(1);
+}
+
+.sidebar nav ul li a.active {
+  background-color: var(--hover-color);
+  padding-left: 2.5rem;
+}
+
+.sidebar nav ul li a.active::before {
+  transform: scaleY(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar nav ul li a {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

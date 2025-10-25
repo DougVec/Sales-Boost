@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Segoe UI", sans-serif;
+    max-width: 100%;
+    background: #201B2C;
+  }
+
+  .principal {
+    display: flex;
+    margin-top: 10em;
+    
+
+  }
+
+  .imagem {
+    margin: 5em 20em 40em 20em;
+  }
+
+  .imagem img {
+    width: 20em;
+    height: 20em;
+    margin-top: 3em;
+    transform: translateY(0px);
+    animation: float 5s ease-in-out infinite;
+  }
+
+  .imagem h1 {
+    font-family: "Roboto Mono", monospace;
+    color: #1e96fc;
+  }
+
+  .imagem p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-bottom: 2em;
+    color: #1e96fc;
+  }
+
+
+.container {
+  background-color: whitesmoke;
+  padding: 6px;
+  width: 350px;
+  height: 24em; /* altura inicial */
+  margin: 5em 0 10em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 darkgrey;
+  transition: height 0.5s ease;
+}
+
+
+form {
+  position: absolute;
+  margin-top: 80px;
+  transition: .5s;
+  width: 300px;
+  height: 400px;
+}
+
+.buttonsForm {
+  margin-top: 40px;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0 0 7px 0 #1e96fc;
+}
+
+.buttonsForm button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  padding: 10px 29px;
+}
+
+.btnColor {
+  position: absolute;
+  width: 108px;
+  height: 100%;
+  background: linear-gradient(to right, #1e96fc, #1e96fc);
+  border-radius: 30px;
+  transition: .3s;
+}
+
+input[type="text"], input[type="password"],.segmento  {
+  border: none;
+  margin-top: 40px;
+  border-radius: 60px;
+  padding: 8px 0 8px 35px;
+  outline: none;
+  width: 100%;
+}
+
+
+button[type="submit"] {
+  background: #1e96fc;
+  color: white;
+  border-radius: 30px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 0 8px 15px;
+  font-size: 15px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.divCheck {
+  margin: 10px 0 0 5px;
+  width: 80%;
+  font-size: 13px;
+}
+
+#signin {
+  left: 25px;
+}
+
+#signup {
+  left: 450px;
+}
+
+i {
+  position: absolute;
+  left: 0;
+  padding: 10px 10px;
+}
+
+.iEmail {
+  top: 40px;
+}
+
+.iPassword {
+  top: 114px;
+}
+
+.iEmpresa {
+    top: 185px;
+}
+
+.iPassword2 {
+  top: 190px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+.input-error {
+    border-color: red;
+}
+
+
+
+
+  @keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-60px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

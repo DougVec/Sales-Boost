@@ -1,0 +1,597 @@
+:root {
+  --azul: #1976d2;
+  --Preto: #000;
+  --verde: #43a047;
+  --Branco: f4f4f4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.geral {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.geral.close {
+  margin-left: 0;
+}
+
+#areaFiltro {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.main button {
+  margin: 0 10px 20px 4px;
+}
+
+/*
+  .arrow {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin: 0 0 0 10em;
+  }
+  
+  .rotate-180 {
+    transform: rotate(180deg);
+  }*/
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 8.5em;
+}
+
+.header-actions {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.btn-add {
+  background: var(--azul);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-add:hover {
+  background: var(--verde);
+  transform: translateY(-1px);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+}
+
+.btn-add i {
+  font-size: 1.1rem;
+}
+
+/* Tabela */
+
+/* Ajuste das setas */
+.arrow {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-left: 0.5em; /* reduzido */
+  font-size: 0.9em; /* mais discreto */
+  color: var(--azul);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Ajuste dos th */
+th {
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Ajuste da tabela */
+table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Ajuste especial para coluna Descrição */
+td.descricao-coluna {
+  max-width: 300px; /* aumentada */
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Ajuste para botão dentro de td */
+td button {
+  margin-right: 5px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+
+/* Ícones */
+td i {
+  padding: 8px;
+  cursor: pointer;
+  color: var(--azul);
+}
+
+td i:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease;
+}
+
+td.descricao-coluna {
+  max-width: 180px; /* Ajuste conforme o layout */
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.icones i {
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: 1s ease-in-out;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+  color: var(--azul);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-message {
+  display: block;
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.modal-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-actions .save {
+  background: var(--azul);
+  color: white;
+  border: none;
+}
+
+.modal-actions .save:hover {
+  background: var(--verde);
+  transform: translateY(-1px);
+}
+
+.modal-actions .cancel {
+  background: white;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.modal-actions .cancel:hover {
+  background: #f5f5f5;
+  transform: translateY(-1px);
+}
+
+#fechamodal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#fechamodal:hover {
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.pdf {
+  cursor: pointer;
+  background: #fff;
+  color: #1976d2;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+
+.pdf:hover {
+  transition: 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+
+.F-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-container img {
+  width: 35rem;
+}
+
+.loader-container.fade-out {
+  top: 110%;
+  opacity: 0;
+}
+
+@keyframes animacao {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#areaFiltro label {
+  font-size: 20px;
+  margin-bottom: 1em;
+}
+
+#filtro {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+}
+
+#limpaFiltro {
+  cursor: pointer;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+#areaGrafico {
+  max-width: 850px;
+  margin: 0 auto;
+  height: 40em;
+}
+
+#areaGrafico h3 {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+#sidebar-frame {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  border: none;
+  z-index: 1000;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+#sidebar-frame.collapsed {
+  transform: translateX(-250px);
+}
+
+#areaFiltro input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+#limpaFiltro {
+  cursor: pointer;
+  color: #666;
+  padding: 0 5px;
+}
+
+#tabela-solicitacoes {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+#tabela-solicitacoes th {
+  background: #1976d2;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+#tabela-solicitacoes td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+#tabela-solicitacoes tr:hover {
+  background-color: #f8f9fa;
+}
+
+.pdf {
+  background: none;
+  border: none;
+  color: #1976d2;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.pdf:hover {
+  color: #1565c0;
+}
+
+@media (max-width: 768px) {
+  #sidebar-frame {
+    width: 0;
+  }
+
+  .geral {
+    margin-left: 0;
+  }
+}
+
+/* Form Validation Styles */
+input.error,
+textarea.error {
+  border-color: var(--error-color);
+  background-color: #fff8f8;
+}
+
+input.valid,
+textarea.valid {
+  border-color: #4caf50;
+  background-color: #f8fff8;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Input Focus States */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Input Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+/* Input Transitions */
+input,
+textarea {
+  transition: all 0.3s ease;
+}
+
+/* Form Group Spacing */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Label Styles */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Required Field Indicator */
+label.required::after {
+  content: "*";
+  color: var(--error-color);
+  margin-left: 0.25rem;
+}
+
+.toggle-sidebar {
+  position: fixed;
+  left: 250px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--azul);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-sidebar:hover {
+  background: var(--verde);
+  transform: scale(1.1);
+}
+
+.toggle-sidebar i {
+  transition: transform 0.3s ease;
+}
+
+.toggle-sidebar.collapsed {
+  transform: translateX(-250px);
+}
+
+.toggle-sidebar.collapsed i {
+  transform: rotate(180deg);
+}
+
+.geral.expanded {
+  margin-left: 0;
+}

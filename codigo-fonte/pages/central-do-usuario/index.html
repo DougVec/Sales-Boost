@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel Administrativo - Solicitações</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+
+  <body>
+    <iframe
+      src="./../../components/side-bar/index.html"
+      id="sidebar-frame"
+      title="Sidebar Navigation"
+    ></iframe>
+
+    <button
+      class="toggle-sidebar"
+      id="toggleSidebar"
+      title="Expandir/Recolher Menu"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <section class="geral" id="geral">
+      <div class="header-actions">
+        <button class="btn-add" onclick="abrirModalNovoOrcamento()">
+          <i class="fas fa-plus"></i> Novo Orçamento
+        </button>
+      </div>
+
+      <div id="areaFiltro">
+        <label for="filtro">Pesquisa:</label>
+        <input id="filtro" type="text" />
+        <span id="limpaFiltro">&times;</span>
+      </div>
+
+      <div class="main">
+        <table id="tabela-solicitacoes">
+          <thead>
+            <tr>
+              <th onclick="ordenarPor('cliente')">
+                Cliente <i class="fa-solid fa-arrow-down arrow"></i>
+              </th>
+              <th onclick="ordenarPor('valor')">
+                Valor <i class="fa-solid fa-arrow-down arrow"></i>
+              </th>
+              <th onclick="ordenarPor('data')">
+                Data <i class="fa-solid fa-arrow-down arrow"></i>
+              </th>
+              <th>Descrição</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="solicitacoes-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Modal Novo Orçamento -->
+    <div id="modalNovoOrcamento" class="modal-overlay">
+      <div class="modal">
+        <span id="fechamodal" onclick="fecharModalNovoOrcamento()"
+          >&times;</span
+        >
+        <div class="modal-content">
+          <h2>Novo Orçamento</h2>
+          <form id="formNovoOrcamento">
+            <div class="form-group">
+              <label for="cliente" class="required">Cliente</label>
+              <input
+                type="text"
+                id="cliente"
+                name="cliente"
+                required
+                placeholder="Nome do cliente"
+              />
+              <span id="clienteError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="valor" class="required">Valor</label>
+              <input
+                type="number"
+                id="valor"
+                name="valor"
+                required
+                min="0.01"
+                step="0.01"
+                placeholder="0,00"
+              />
+              <span id="valorError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="data" class="required">Data</label>
+              <input type="date" id="data" name="data" required />
+              <span id="dataError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="descricao" class="required">Descrição</label>
+              <textarea
+                id="descricao"
+                name="descricao"
+                required
+                placeholder="Descreva o orçamento"
+                rows="4"
+              ></textarea>
+              <span id="descricaoError" class="error-message"></span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-save">
+                <i class="fas fa-save"></i> Salvar
+              </button>
+              <button
+                type="button"
+                class="btn-cancel"
+                onclick="fecharModalNovoOrcamento()"
+              >
+                <i class="fas fa-times"></i> Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

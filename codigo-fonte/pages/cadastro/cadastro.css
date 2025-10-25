@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  height: calc(100vh - 80px);
+  max-width: 100%;
+  background-image: url("../Images/programador.jfif");
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1e96fc;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em;
+}
+
+header p {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.principal {
+  display: flex;
+}
+
+.imagem img {
+  width: 60em;
+  height: 50em;
+  margin-top: 60px;
+  transform: translateY(0px);
+  animation: float 5s ease-in-out infinite;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto 40px;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: none;
+}
+
+.input-error {
+  border-color: red;
+}
+
+button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+  font-size: 1.1em;
+  background-color: #1e96fc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #181818;
+  color: #fff;
+  padding: 15px;
+  border-radius: 3px;
+  transition: 1s;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  padding: 20px;
+  color: #ffffff;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-60px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

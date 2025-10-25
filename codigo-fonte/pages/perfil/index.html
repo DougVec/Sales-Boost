@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil - SalesBoost</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        background-color: #f1f4f9;
+      }
+
+      #sidebar-frame {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        border: none;
+        z-index: 1000;
+      }
+
+      .main-content {
+        flex: 1;
+        margin-left: 250px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+      }
+
+      .main-content.close {
+        margin-left: 0;
+      }
+
+      @media (max-width: 768px) {
+        #sidebar-frame {
+          width: 0;
+        }
+
+        .main-content {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src="./../../components/side-bar/index.html"
+      id="sidebar-frame"
+      title="Sidebar Navigation"
+    ></iframe>
+
+    <main id="main">
+      <div class="container">
+        <h1>Perfil do Usuário</h1>
+
+        <form id="profileForm" class="profile-form">
+          <div class="form-section">
+            <h2>Informações Pessoais</h2>
+
+            <div class="form-group">
+              <label for="firstName">Primeiro Nome</label>
+              <input type="text" id="firstName" name="firstName" required />
+              <span id="firstNameError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Sobrenome</label>
+              <input type="text" id="lastName" name="lastName" required />
+              <span id="lastNameError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" required />
+              <span id="empresaError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cpfCnpj">CPF ou CNPJ</label>
+              <input type="text" id="cpfCnpj" name="cpfCnpj" required />
+              <span id="cpfCnpjError" class="error-message"></span>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Informações de Contato</h2>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+              <span id="emailError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="telefone" class="required">Telefone</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                required
+                placeholder="(99) 99999-9999"
+                maxlength="15"
+              />
+              <span id="telefoneError" class="error-message"></span>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Endereço</h2>
+
+            <div class="form-group">
+              <label for="endereco">Endereço</label>
+              <input type="text" id="endereco" name="endereco" required />
+              <span id="enderecoError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" required />
+              <span id="cidadeError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" name="estado" required />
+              <span id="estadoError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" name="cep" required />
+              <span id="cepError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pais">País</label>
+              <input type="text" id="pais" name="pais" required />
+              <span id="paisError" class="error-message"></span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-save">
+              <i class="fas fa-save"></i> Salvar Alterações
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

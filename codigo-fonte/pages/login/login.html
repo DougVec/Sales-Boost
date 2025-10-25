@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../login/login.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cf6fa412bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cadastro - Solicite Seu Orçamento</title>
+  </head>
+  <body>
+    <section class="principal">
+      <div class="imagem" data-aos="zoom-in-down">
+        <h1>
+          Faça login <br />
+          E entre para nosso time
+        </h1>
+        <img src="../login/img/fundo (1).png" alt="" />
+      </div>
+
+      <div class="container" data-aos="zoom-in-left">
+        <div class="buttonsForm">
+          <div class="btnColor"></div>
+          <button id="btnSignin">Entrar</button>
+          <button id="btnSignup">Cadastrar</button>
+        </div>
+
+        <form id="signin" class="entrar">
+          <input type="text" id="email" placeholder="Email" required />
+          <i class="fas fa-envelope iEmail"></i>
+          <div class="error-message" id="erro-email">Informe seu email.</div>
+          <input type="password" id="password" placeholder="Senha" required />
+          <i class="fas fa-lock iPassword"></i>
+          <div class="error-message" id="erro-password">Informe sua senha.</div>
+
+          <button type="submit">Entrar</button>
+        </form>
+
+        <form id="signup" class="Cadastro">
+          <input type="text" id="emailc" placeholder="Email" required />
+          <i class="fas fa-envelope iEmail"></i>
+          <div class="error-message" id="erro-emailc">Informe seu email.</div>
+
+          <input type="password" id="passwordc" placeholder="Senha" required />
+          <i class="fas fa-lock iPassword"></i>
+          <div class="error-message" id="erro-passwordc">
+            Informe sua senha.
+          </div>
+
+          <input
+            type="text"
+            id="empresa"
+            placeholder="Nome da empresa"
+            required
+          />
+          <i class="fas fa-building iEmpresa"></i>
+          <div class="error-message" id="erro-empresa">
+            Informe o nome da empresa.
+          </div>
+
+          <select class="segmento" id="segmento" name="segmento">
+            <option value="">Selecione</option>
+            <option value="e-commerce">Comércio (e-commerce)</option>
+            <option value="loja">Comércio (loja física)</option>
+            <option value="Indústria">Indústria</option>
+            <option value="Serviços">Serviços</option>
+          </select>
+          <div class="error-message" id="erro-segmento">
+            Escolha seu segmento de trabalho.
+          </div>
+
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
+    <script src="../login/login.component.js"></script>
+  </body>
+</html>

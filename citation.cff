@@ -1,0 +1,27 @@
+message: Please cite this software using these metadata.
+title: SalesBoost
+authors:
+  - family-names: Costa
+    given-names: Lucas
+  - family-names: Santos
+    given-names: Ronei
+  - family-names: Resende
+    given-names: Italo
+  - family-names: Lourenço
+    given-names: Isac
+  - family-names: Vecchi
+    given-names: Douglas
+  - family-names: Lourenço
+    given-names: Hiago
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Costa
+    given-names: Marco
+
+keywords:
+  - "SalesBoost"
+  - "Sales"
+  - "Orçamento"
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e1-proj-web-t4-projsalesboost
+version: 1.0.0
+date-released: 2025-06-09

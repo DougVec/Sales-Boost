@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/*Inicio Header*/
+
+.nav {
+  position: fixed;
+  width: 100%;
+  background-color: #ddd;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 999;
+  transition: all 1s ease;
+}
+
+.logo_sales {
+  position: relative;
+  right: 1000px;
+  cursor: pointer;
+}
+
+.logo {
+  background-color: #fff;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-right: 24px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #181818;
+  padding: 20px;
+}
+
+.nav-list a:hover {
+  background: #181818;
+  color: #fff;
+  padding: 10px;
+  border-radius: 3px;
+  transition: 1s;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./cadastro.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Cadastro - Solicite Seu Orçamento</title>
+  </head>
+  <iframe
+    src="./../../components/nav/nav.html"
+    width="100%"
+    height="75px"
+    frameborder="0"
+  ></iframe>
+  <body>
+    <header>
+      <h1>Cadastre-se para Solicitar um Orçamento</h1>
+      <p>Receba uma proposta personalizada para o seu projeto</p>
+    </header>
+
+    <div class="container" data-aos="zoom-in">
+      <h2>Preencha o formulário</h2>
+      <form id="cadastroForm" novalidate>
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" />
+        <div class="error-message" id="erro-nome">Informe seu nome.</div>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" />
+        <div class="error-message" id="erro-email">
+          Informe um e-mail válido.
+        </div>
+
+        <label for="telefone">Telefone</label>
+        <input
+          type="tel"
+          id="telefone"
+          name="telefone"
+          placeholder="(99) 99999-9999"
+        />
+        <div class="error-message" id="erro-telefone">
+          Informe um telefone válido.
+        </div>
+
+        <label for="empresa">Empresa (opcional)</label>
+        <input type="text" id="empresa" name="empresa" />
+
+        <label for="segmento">Qual seu segmento de trabalho?</label>
+        <select id="segmento" name="segmento">
+          <option value="">Selecione</option>
+          <option value="e-commerce">Comércio (e-commerce)</option>
+          <option value="loja">Comércio (loja física)</option>
+          <option value="Indústria">Indústria</option>
+          <option value="Serviços">Serviços</option>
+        </select>
+        <div class="error-message" id="erro-segmento">
+          Escolha seu segmento de trabalho.
+        </div>
+
+        <label for="servico">Tipo de Serviço</label>
+        <select id="servico" name="servico">
+          <option value="">Selecione</option>
+          <option value="consultoria">Agronegocio</option>
+          <option value="sistema">Alimentos e bebidas</option>
+          <option value="arte">Arte</option>
+          <option value="bares">Bares e restaurantes</option>
+          <option value="beleza">Beleza, perfumaria e medicamentos</option>
+          <option value="brinquedos">Brinquedos</option>
+          <option value="consoles">Consoles e Video-Games</option>
+          <option value="Decoração">Decoração</option>
+          <option value="maquinas">Máquinas e equipamentos</option>
+          <option value="moda">Moda e acessórios</option>
+          <option value="outros">Outros</option>
+        </select>
+        <div class="error-message" id="erro-servico">
+          Escolha um tipo de serviço.
+        </div>
+
+        <button type="submit">Solicitar Orçamento</button>
+      </form>
+    </div>
+
+    <footer>&copy; Todos direitos reservados ao grupo G5</footer>
+
+    <script>
+      AOS.init({
+        duration: 1500,
+      });
+    </script>
+    <script src="./cadastro.component.js"></script>
+  </body>
+  <iframe
+    src="./../../components/footer/footer.html"
+    width="100%"
+    height="50px"
+    frameborder="0"
+  ></iframe>
+</html>
